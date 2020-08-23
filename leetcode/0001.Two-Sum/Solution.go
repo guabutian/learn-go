@@ -31,11 +31,18 @@ func TwoSum1(nums []int, target int) []int {
 	
  */
 func TwoSum2(nums []int, target int) []int {
-
+	
+	// 申请一个map
+	// k: 数值  v:数值下标
 	m := make(map[int]int, len(nums))
 
+	// 遍历数组
 	for i, v := range nums {
+		
+		// 获取目标值的补值
 		sub := target - v
+		
+		// 补值在不在map中，
 		if j, ok := m[sub]; ok {
 			return []int{j, i}
 		} else {
